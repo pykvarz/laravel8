@@ -7,7 +7,7 @@
         @csrf
         <div class="form-group">
             <label for="">Навзвание</label>
-            <input type="text" value="{{ old('title') }}" class="form-control @error('title') is-invalid @enderror ">
+            <input type="text" name="title" value="{{ old('title') }}" class="form-control @error('title') is-invalid @enderror " >
             @error('title')
             <span class="invalid-feedback">
                 <strong>{{$message}}</strong>
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
             <label for="txtContent">Описание</label>
-            <textarea name="content" id="txtContent" rows="3"></textarea>
+            <textarea name="description" id="txtContent" rows="3"></textarea>
         </div>
         <div class="form-group">
             <label for="txtPrice">Цена</label>

@@ -21,13 +21,13 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-    private const BB_VALIDATOR = [
-        'title'         => 'required|mx:50',
+     const BB_VALIDATOR = [
+        'title'         => 'required|max:50',
         'description'   => 'required',
         'price'         => 'required|numeric'
     ];
 
-    private const BB_ERROR_MESSAGES = [
+     const BB_ERROR_MESSAGES = [
         'price.required'    => 'Раздать товары бесплатно нельзя',
         'required'          => 'Заполните это поле',
         'max'               => 'Значение не должно быть длинее :max символов',
@@ -64,6 +64,7 @@ class HomeController extends Controller
                     'description'   => $validated['description'],
                     'price'         => $validated['price'] ]);
         $bb->save();
+        return redirect()->route('home');
     }
 
     public function showEditBbForm(Bb $bb)

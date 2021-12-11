@@ -22,6 +22,6 @@
             <label for="txtPrice">Цена</label>
             <input name="price" id="txtPrice" class="form-control" value="{{ $bb->price }}">
         </div>
-        <input type="text" class="btn btn-primary" value="Сохранить">
+        <input type="submit" class="btn btn-primary" value="Сохранить">
     </form>
 @endsection
